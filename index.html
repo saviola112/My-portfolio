@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saviour Ekewuba | Fullstack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+      }
+      .tail-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+    </style>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body class="bg-zinc-950 text-white">
+    <!-- Navbar -->
+    <nav
+      class="border-b border-zinc-800 sticky top-0 bg-zinc-950/80 backdrop-blur-md z-50"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-bold text-emerald-400">Saviour Ekewuba</h1>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex gap-8 text-sm">
+          <a href="#projects" class="hover:text-emerald-400 transition"
+            >Projects</a
+          >
+          <a href="#contact" class="hover:text-emerald-400 transition"
+            >Contact</a
+          >
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button
+          id="mobile-menu-button"
+          class="md:hidden text-3xl text-emerald-400 focus:outline-none"
+        >
+          ☰
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-zinc-900 border-t border-zinc-800"
+      >
+        <div class="px-6 py-6 flex flex-col gap-6 text-center text-lg">
+          <a href="#projects" class="hover:text-emerald-400 transition"
+            >Projects</a
+          >
+          <a href="#contact" class="hover:text-emerald-400 transition"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section
+      class="tail-container px-6 py-20 grid md:grid-cols-2 gap-12 items-center"
+    >
+      <div>
+        <h2 class="text-5xl font-bold leading-tight">
+          Hi, I'm Saviour Chibuzor Ekewuba
+        </h2>
+        <p class="text-3xl text-emerald-400 mt-3">Fullstack Web Developer</p>
+        <p class="text-zinc-400 mt-6 text-lg">
+          I'm passionate about coding and building reliable, responsive
+          websites. Based in Lagos, Nigeria and actively seeking my first
+          fullstack internship.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mt-10">
+          <a
+            href="https://github.com/saviola112"
+            target="_blank"
+            class="bg-white text-black px-6 py-3 rounded-xl font-medium flex items-center gap-2 hover:bg-zinc-200"
+          >
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/saviour-ekewuba"
+            target="_blank"
+            class="bg-[#0A66C2] text-white px-6 py-3 rounded-xl font-medium flex items-center gap-2 hover:bg-[#0A66C2]/90"
+          >
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a
+            href="mailto:ekewubas@gmail.com"
+            class="border border-emerald-400 text-emerald-400 px-6 py-3 rounded-xl font-medium flex items-center gap-2 hover:bg-emerald-400 hover:text-black"
+          >
+            <i class="fas fa-envelope"></i> Email Me
+          </a>
+        </div>
+      </div>
+
+      <div class="flex justify-center">
+        <img
+          src="./assets/Profile-picture.jpeg"
+          alt="Saviour Ekewuba"
+          class="w-80 h-70 object-cover rounded-3xl border-4 border-emerald-600 shadow-2xl"
+        />
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="bg-zinc-900 py-16">
+      <div class="tail-container px-6">
+        <h3 class="text-3xl font-bold text-center mb-10">My Tech Stack</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-zinc-800 p-6 rounded-2xl text-center">HTML</div>
+          <div class="bg-zinc-800 p-6 rounded-2xl text-center">CSS</div>
+          <div class="bg-zinc-800 p-6 rounded-2xl text-center">
+            Tailwind CSS
+          </div>
+          <div class="bg-zinc-800 p-6 rounded-2xl text-center">JavaScript</div>
+          <div class="bg-zinc-800 p-6 rounded-2xl text-center">React</div>
+          <div class="bg-zinc-800 p-6 rounded-2xl text-center">Node.js</div>
+          <div class="bg-zinc-800 p-6 rounded-2xl text-center">Express.js</div>
+          <div class="bg-zinc-800 p-6 rounded-2xl text-center">MongoDB</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="tail-container px-6 py-20">
+      <h3 class="text-3xl font-bold text-center mb-12">Featured Projects</h3>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Bizmal Hotel -->
+        <div class="bg-zinc-900 rounded-3xl overflow-hidden">
+          <div class="h-64 bg-zinc-800 flex items-center justify-center">
+            <span class="text-6xl">🏨</span>
+          </div>
+          <div class="p-8">
+            <h4 class="text-2xl font-semibold">Bizmal Hotel Booking System</h4>
+            <p class="text-zinc-400 mt-3">
+              Responsive hotel booking website with interactive real-time price
+              calculator. Nigerian pricing & location included.
+            </p>
+            <div class="flex flex-wrap gap-2 mt-6">
+              <span
+                class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
+                >HTML</span
+              >
+              <span
+                class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
+                >Tailwind</span
+              >
+              <span
+                class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
+                >JavaScript</span
+              >
+            </div>
+            <a
+              href="https://bizmal-hotel-hqh1.vercel.app"
+              target="_blank"
+              class="block mt-8 text-center bg-emerald-400 text-black py-3 rounded-2xl font-medium hover:bg-emerald-300"
+            >
+              View Live Demo →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="bg-zinc-900 py-20">
+      <div class="tail-container px-6 text-center">
+        <h3 class="text-3xl font-bold mb-4">Let's Connect</h3>
+        <p class="text-zinc-400 max-w-md mx-auto">
+          Open to fullstack internship opportunities in Lagos or remote.
+          Available immediately.
+        </p>
+
+        <div class="flex justify-center gap-8 mt-12 text-4xl">
+          <a
+            href="https://github.com/saviola112"
+            target="_blank"
+            class="hover:text-emerald-400"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/saviour-ekewuba"
+            target="_blank"
+            class="hover:text-emerald-400"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="mailto:ekewubas@gmail.com" class="hover:text-emerald-400"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </div>
+
+        <p class="mt-16 text-zinc-500">
+          © 2026 Saviour Chibuzor Ekewuba • Lagos, Nigeria
+        </p>
+      </div>
+    </section>
+    <script src="js/script.js" defer></script>
+  </body>
+</html>

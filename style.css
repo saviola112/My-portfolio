@@ -1,0 +1,56 @@
+/* Custom styles beyond Tailwind */
+body {
+  scroll-behavior: smooth;
+}
+
+/* Project card hover animation */
+.project-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 50px -12px rgb(16 185 129 / 0.25);
+}
+
+/* Mobile menu animation */
+#mobile-menu {
+  animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle glow on buttons */
+.cta-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.cta-button:hover::after {
+  opacity: 1;
+}
