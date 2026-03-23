@@ -4,24 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Saviour Ekewuba | Fullstack Developer</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+
     <style>
       body {
         font-family: system-ui, sans-serif;
       }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
       .project-card {
         transition: all 0.4s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
       }
+
       .project-card:hover {
         transform: translateY(-12px);
         box-shadow: 0 25px 50px -12px rgb(16 185 129 / 0.25);
       }
     </style>
   </head>
+
   <body class="bg-zinc-950 text-white">
     <!-- Navbar -->
     <nav class="border-b border-zinc-800">
@@ -29,13 +42,14 @@
         class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center"
       >
         <h1 class="text-2xl font-bold text-emerald-400">Saviour Ekewuba</h1>
+
         <div class="flex gap-8 text-sm">
-          <a href="#projects" class="hover:text-emerald-400 transition"
-            >Projects</a
-          >
-          <a href="#contact" class="hover:text-emerald-400 transition"
-            >Contact</a
-          >
+          <a href="#projects" class="hover:text-emerald-400 transition">
+            Projects
+          </a>
+          <a href="#contact" class="hover:text-emerald-400 transition">
+            Contact
+          </a>
         </div>
       </div>
     </nav>
@@ -48,28 +62,35 @@
         <h2 class="text-5xl font-bold leading-tight">
           Hi, I'm Saviour Chibuzor Ekewuba
         </h2>
+
         <p class="text-3xl text-emerald-400 mt-3">Fullstack Web Developer</p>
+
         <p class="text-zinc-400 mt-6 text-lg">
-          I'm passionate about coding and building reliable, responsive
-          websites. Based in Lagos, Nigeria and actively seeking my first
-          fullstack internship.
+          I design and build responsive web applications that combine clean
+          frontend experiences with reliable backend functionality. Based in
+          Lagos, Nigeria, I focus on creating digital products that are
+          practical, scalable, and user-centered.
         </p>
 
         <div class="flex flex-wrap gap-4 mt-10">
           <a
             href="https://github.com/saviola112"
             target="_blank"
+            rel="noopener noreferrer"
             class="bg-white text-black px-6 py-3 rounded-xl font-medium flex items-center gap-2 hover:bg-zinc-200"
           >
             <i class="fab fa-github"></i> GitHub
           </a>
+
           <a
             href="https://www.linkedin.com/in/saviour-ekewuba"
             target="_blank"
+            rel="noopener noreferrer"
             class="bg-[#0A66C2] text-white px-6 py-3 rounded-xl font-medium flex items-center gap-2 hover:bg-[#084d9e]"
           >
             <i class="fab fa-linkedin"></i> LinkedIn
           </a>
+
           <a
             href="mailto:ekewubas@gmail.com"
             class="border border-emerald-400 text-emerald-400 px-6 py-3 rounded-xl font-medium flex items-center gap-2 hover:bg-emerald-400 hover:text-black"
@@ -82,9 +103,23 @@
       <div class="flex justify-center">
         <img
           src="./assets/Profile-picture.jpeg"
-          alt="Saviour Ekewuba"
-          class="w-80 h-70 object-cover rounded-3xl border-4 border-emerald-400 shadow-2xl"
+          alt="Portrait of Saviour Ekewuba"
+          class="w-70 h-70 object-cover rounded-3xl border-4 border-emerald-400 shadow-2xl"
         />
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="py-16">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h3 class="text-3xl font-bold mb-6">About Me</h3>
+
+        <p class="text-zinc-400 text-lg leading-8">
+          I’m a fullstack developer focused on building modern, responsive, and
+          user-friendly web applications. I enjoy working across both frontend
+          and backend technologies to create digital experiences that are
+          functional, scalable, and visually clean.
+        </p>
       </div>
     </section>
 
@@ -92,6 +127,7 @@
     <section class="bg-zinc-900 py-16">
       <div class="max-w-6xl mx-auto px-6">
         <h3 class="text-3xl font-bold text-center mb-10">My Tech Stack</h3>
+
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div class="bg-zinc-800 p-6 rounded-2xl text-center">HTML</div>
           <div class="bg-zinc-800 p-6 rounded-2xl text-center">CSS</div>
@@ -107,23 +143,28 @@
       </div>
     </section>
 
-    <!-- Projects Section - 3 Real Projects -->
+    <!-- Projects -->
     <section id="projects" class="max-w-6xl mx-auto px-6 py-20">
       <h3 class="text-3xl font-bold text-center mb-12">Featured Projects</h3>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- 1. Bizmal Hotel -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Project 1 -->
         <div class="project-card bg-zinc-900 rounded-3xl overflow-hidden">
-          <div class="h-64 bg-zinc-800 flex items-center justify-center">
-            <span class="text-6xl">🏨</span>
+          <div
+            class="h-64 bg-zinc-800 flex items-center justify-center text-6xl"
+          >
+            🏨
           </div>
-          <div class="p-8">
+
+          <div class="p-8 flex flex-col flex-1">
             <h4 class="text-2xl font-semibold">Bizmal Hotel Booking System</h4>
-            <p class="text-zinc-400 mt-3">
-              Modern responsive hotel website with interactive booking
-              calculator, individual room detail pages, and professional design.
+
+            <p class="text-zinc-400 mt-3 flex-1">
+              Responsive hotel platform featuring a booking calculator, room
+              detail pages, and a clean user experience.
             </p>
-            <div class="flex flex-wrap gap-2 mt-6">
+
+            <div class="flex flex-wrap gap-2 mt-10">
               <span
                 class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
                 >HTML</span
@@ -137,28 +178,35 @@
                 >JavaScript</span
               >
             </div>
+
             <a
-              href="https://bizmal-hotel-hqh1.vercel.app"
+              href="https://bizmal-hotel.vercel.app/"
               target="_blank"
-              class="block mt-8 text-center bg-emerald-400 text-black py-3 rounded-2xl font-medium hover:bg-emerald-300"
+              rel="noopener noreferrer"
+              class="mt-auto text-center bg-emerald-400 text-black py-3 rounded-2xl font-medium hover:bg-emerald-300"
             >
               View Live Project →
             </a>
           </div>
         </div>
 
-        <!-- 2. Goal Progress Tracker -->
+        <!-- Project 2 -->
         <div class="project-card bg-zinc-900 rounded-3xl overflow-hidden">
-          <div class="h-64 bg-zinc-800 flex items-center justify-center">
-            <span class="text-6xl">🎯</span>
+          <div
+            class="h-64 bg-zinc-800 flex items-center justify-center text-6xl"
+          >
+            🎯
           </div>
-          <div class="p-8">
+
+          <div class="p-8 flex flex-col flex-1">
             <h4 class="text-2xl font-semibold">Goal Progress Tracker</h4>
-            <p class="text-zinc-400 mt-3">
-              Modern web app to set, track, and visualize personal goals with
-              progress bars, milestones, and daily updates.
+
+            <p class="text-zinc-400 mt-3 flex-1">
+              Web application for setting and tracking goals with progress
+              visualization and milestone tracking.
             </p>
-            <div class="flex flex-wrap gap-2 mt-6">
+
+            <div class="flex flex-wrap gap-2 mt-10">
               <span
                 class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
                 >React</span
@@ -172,28 +220,35 @@
                 >JavaScript</span
               >
             </div>
+
             <a
               href="https://goal-front-s1wj.vercel.app"
               target="_blank"
-              class="block mt-8 text-center bg-emerald-400 text-black py-3 rounded-2xl font-medium hover:bg-emerald-300"
+              rel="noopener noreferrer"
+              class="mt-auto text-center bg-emerald-400 text-black py-3 rounded-2xl font-medium hover:bg-emerald-300"
             >
               View Live Project →
             </a>
           </div>
         </div>
 
-        <!-- 3. Contact Form -->
+        <!-- Project 3 -->
         <div class="project-card bg-zinc-900 rounded-3xl overflow-hidden">
-          <div class="h-64 bg-zinc-800 flex items-center justify-center">
-            <span class="text-6xl">✉️</span>
+          <div
+            class="h-64 bg-zinc-800 flex items-center justify-center text-6xl"
+          >
+            ✉️
           </div>
-          <div class="p-8">
+
+          <div class="p-8 flex flex-col flex-1">
             <h4 class="text-2xl font-semibold">Professional Contact Form</h4>
-            <p class="text-zinc-400 mt-3">
-              Fully functional contact form with validation, different query
-              types, consent checkbox, and real email submission.
+
+            <p class="text-zinc-400 mt-3 flex-1">
+              Functional contact system with validation, structured inputs, and
+              email integration.
             </p>
-            <div class="flex flex-wrap gap-2 mt-6">
+
+            <div class="flex flex-wrap gap-2 mt-10">
               <span
                 class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
                 >HTML</span
@@ -207,10 +262,54 @@
                 >EmailJS</span
               >
             </div>
+
             <a
               href="https://contact-form-five-livid.vercel.app"
               target="_blank"
-              class="block mt-8 text-center bg-emerald-400 text-black py-3 rounded-2xl font-medium hover:bg-emerald-300"
+              rel="noopener noreferrer"
+              class="mt-auto text-center bg-emerald-400 text-black py-3 rounded-2xl font-medium hover:bg-emerald-300"
+            >
+              View Live Project →
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card bg-zinc-900 rounded-3xl overflow-hidden">
+          <div
+            class="h-64 bg-zinc-800 flex items-center justify-center text-6xl"
+          >
+            🧼
+          </div>
+
+          <div class="p-8 flex flex-col flex-1">
+            <h4 class="text-2xl font-semibold">Espree Cleaning Services</h4>
+
+            <p class="text-zinc-400 mt-3 flex-1">
+              Service website for residential and commercial cleaning with
+              structured layout and booking flow.
+            </p>
+
+            <div class="flex flex-wrap gap-2 mt-10">
+              <span
+                class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
+                >HTML</span
+              >
+              <span
+                class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
+                >Tailwind CSS</span
+              >
+              <span
+                class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
+                >JavaScript</span
+              >
+            </div>
+
+            <a
+              href="https://espreecleaning.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-auto text-center bg-emerald-400 text-black py-3 rounded-2xl font-medium hover:bg-emerald-300"
             >
               View Live Project →
             </a>
@@ -223,27 +322,40 @@
     <section id="contact" class="bg-zinc-900 py-20">
       <div class="max-w-6xl mx-auto px-6 text-center">
         <h3 class="text-3xl font-bold mb-4">Let's Connect</h3>
+
         <p class="text-zinc-400 max-w-md mx-auto">
-          Open to fullstack internship opportunities in Lagos or remote.
-          Available immediately.
+          Available for fullstack developer roles, freelance projects, and
+          collaborative opportunities in Lagos or remotely.
         </p>
+
         <div class="flex justify-center gap-8 mt-12 text-4xl">
           <a
             href="https://github.com/saviola112"
             target="_blank"
+            rel="noopener noreferrer"
             class="hover:text-emerald-400"
-            ><i class="fab fa-github"></i
-          ></a>
+          >
+            <i class="fab fa-github"></i>
+          </a>
+
           <a
             href="https://www.linkedin.com/in/saviour-ekewuba"
             target="_blank"
+            rel="noopener noreferrer"
             class="hover:text-emerald-400"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-          <a href="mailto:ekewubas@gmail.com" class="hover:text-emerald-400"
-            ><i class="fas fa-envelope"></i
-          ></a>
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+
+          <a href="mailto:ekewubas@gmail.com" class="hover:text-emerald-400">
+            <i class="fas fa-envelope"></i>
+          </a>
         </div>
+
+        <p class="text-zinc-400 max-w-md mx-auto mt-6">
+          Let’s build something useful, modern, and impactful.
+        </p>
+
         <p class="mt-16 text-zinc-500">
           © 2026 Saviour Chibuzor Ekewuba • Lagos, Nigeria
         </p>
