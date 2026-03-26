@@ -4,12 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Saviour Ekewuba | Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Saviour Ekewuba is a full-stack web developer based in Lagos, Nigeria, building responsive web applications with React, Node.js, and Tailwind CSS."
+    />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Saviour Ekewuba | Full-Stack Developer"
+    />
+    <meta
+      property="og:description"
+      content="Full-stack web developer based in Lagos, Nigeria. Building responsive apps with React, Node.js, and Tailwind CSS."
+    />
+    <meta property="og:type" content="website" />
 
     <script src="https://cdn.tailwindcss.com"></script>
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
     />
 
     <script>
@@ -20,9 +38,6 @@
               accent: "#10b981",
               accentSoft: "#6ee7b7",
             },
-            boxShadow: {
-              accent: "0 25px 50px -12px rgb(16 185 129 / 0.18)",
-            },
           },
         },
       };
@@ -30,207 +45,400 @@
 
     <style>
       body {
-        font-family: system-ui, sans-serif;
+        font-family: "DM Sans", sans-serif;
       }
-
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        font-family: "Syne", sans-serif;
+      }
       html {
         scroll-behavior: smooth;
       }
 
+      /* Fade-in on load */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .fade-up {
+        opacity: 0;
+        animation: fadeUp 0.7s ease forwards;
+      }
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+      .delay-2 {
+        animation-delay: 0.25s;
+      }
+      .delay-3 {
+        animation-delay: 0.4s;
+      }
+      .delay-4 {
+        animation-delay: 0.55s;
+      }
+
+      /* Project card */
       .project-card {
-        transition: all 0.35s ease;
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease;
         display: flex;
         flex-direction: column;
         height: 100%;
       }
-
       .project-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 25px 50px -12px rgb(16 185 129 / 0.18);
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px -12px rgb(16 185 129 / 0.2);
+      }
+
+      /* Skill badge */
+      .skill-badge {
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+      .skill-badge:hover {
+        background: #10b981;
+        color: #000;
+      }
+
+      /* Nav active link */
+      .nav-link {
+        position: relative;
+        transition: color 0.2s;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #10b981;
+        transition: width 0.25s ease;
+      }
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        width: 100%;
+      }
+      .nav-link:hover,
+      .nav-link.active {
+        color: #10b981;
+      }
+
+      /* Subtle grid background on hero */
+      .hero-bg {
+        background-image:
+          linear-gradient(rgba(16, 185, 129, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(16, 185, 129, 0.04) 1px, transparent 1px);
+        background-size: 40px 40px;
       }
     </style>
   </head>
 
   <body class="bg-zinc-950 text-white">
-    <!-- Navbar -->
+    <!-- ===== NAVBAR ===== -->
     <nav
-      class="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-950/90 backdrop-blur"
+      class="sticky top-0 z-50 border-b border-zinc-800/80 bg-zinc-950/90 backdrop-blur"
     >
       <div
         class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center"
       >
-        <h1 class="text-2xl font-bold text-accent">Saviour Ekewuba</h1>
-
-        <div class="flex gap-8 text-sm">
-          <a href="#projects" class="hover:text-accent transition">Projects</a>
-          <a href="#skills" class="hover:text-accent transition">Skills</a>
-          <a href="#contact" class="hover:text-accent transition">Contact</a>
+        <h1 class="text-xl font-bold text-accent tracking-tight">
+          Saviour Ekewuba
+        </h1>
+        <div class="flex gap-8 text-sm font-medium">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#education" class="nav-link">Education</a>
+          <a href="#contact" class="nav-link">Contact</a>
         </div>
       </div>
     </nav>
 
-    <!-- Hero -->
-    <section
-      class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center"
-    >
-      <div>
-        <p
-          class="inline-flex items-center gap-2 text-sm border border-accent/30 bg-accent/10 text-accentSoft px-4 py-2 rounded-full"
-        >
-          <span class="w-2 h-2 rounded-full bg-accent"></span>
-          Available for internship and junior developer opportunities
-        </p>
-
-        <h2 class="text-5xl md:text-6xl font-bold leading-tight mt-6">
-          I build full-stack web applications that solve real business problems.
-        </h2>
-
-        <p class="text-2xl text-accent mt-4 font-semibold">
-          React • Node.js • Tailwind CSS • Express
-        </p>
-
-        <p class="text-zinc-400 mt-6 text-lg leading-8">
-          I’m Saviour Chibuzor Ekewuba, a full-stack web developer based in
-          Lagos, Nigeria. I build responsive websites and functional web
-          applications with clean frontend experiences, practical backend logic,
-          and user-focused workflows.
-        </p>
-
-        <p class="text-zinc-400 mt-4 text-lg leading-8">
-          My recent work includes a hotel booking platform with dynamic pricing
-          and automated email booking flow, a cleaning services website, and
-          other responsive web projects built to solve real use cases.
-        </p>
-
-        <div class="flex flex-wrap gap-4 mt-10">
-          <a
-            href="#projects"
-            class="bg-accent text-black px-6 py-3 rounded-xl font-medium flex items-center gap-2 hover:bg-emerald-300"
+    <!-- ===== HERO ===== -->
+    <header class="hero-bg">
+      <section
+        class="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center"
+      >
+        <div>
+          <p
+            class="fade-up delay-1 inline-flex items-center gap-2 text-sm border border-accent/30 bg-accent/10 text-accentSoft px-4 py-2 rounded-full"
           >
-            <i class="fas fa-briefcase"></i> View Projects
-          </a>
+            <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+            Available for internship &amp; junior developer roles
+          </p>
 
-          <a
-            href="https://github.com/saviola112"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="bg-white text-black px-6 py-3 rounded-xl font-medium flex items-center gap-2 hover:bg-zinc-200"
+          <h2
+            class="fade-up delay-2 text-5xl md:text-6xl font-extrabold leading-tight mt-6 tracking-tight"
           >
-            <i class="fab fa-github"></i> GitHub
-          </a>
+            I build full-stack web apps that solve real problems.
+          </h2>
 
-          <a
-            href="https://www.linkedin.com/in/saviour-ekewuba"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="bg-[#0A66C2] text-white px-6 py-3 rounded-xl font-medium flex items-center gap-2 hover:bg-[#084d9e]"
-          >
-            <i class="fab fa-linkedin"></i> LinkedIn
-          </a>
+          <p class="fade-up delay-3 text-zinc-400 mt-6 text-lg leading-8">
+            I'm
+            <span class="text-white font-medium">Saviour Chibuzor Ekewuba</span
+            >, a full-stack developer based in
+            <span class="text-white font-medium">Lagos, Nigeria</span>. I build
+            responsive websites and web applications with clean frontend
+            experiences, practical backend logic, and user-focused workflows.
+          </p>
 
-          <a
-            href="mailto:ekewubas@gmail.com"
-            class="border border-accent text-accent px-6 py-3 rounded-xl font-medium flex items-center gap-2 hover:bg-accent hover:text-black"
-          >
-            <i class="fas fa-envelope"></i> Email Me
-          </a>
+          <div class="fade-up delay-4 flex flex-wrap gap-3 mt-10">
+            <a
+              href="#projects"
+              class="bg-accent text-black px-6 py-3 rounded-xl font-semibold flex items-center gap-2 hover:bg-emerald-300 transition"
+            >
+              <i class="fas fa-briefcase text-sm"></i> View Projects
+            </a>
+
+            <a
+              href="./assets/Saviour-Ekewuba-Resume.pdf"
+              download
+              class="bg-zinc-800 text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2 hover:bg-zinc-700 border border-zinc-700 transition"
+            >
+              <i class="fas fa-download text-sm"></i> Download CV
+            </a>
+
+            <a
+              href="https://github.com/saviola112"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-white text-black px-6 py-3 rounded-xl font-semibold flex items-center gap-2 hover:bg-zinc-200 transition"
+            >
+              <i class="fab fa-github text-sm"></i> GitHub
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/saviour-ekewuba"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-[#0A66C2] text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2 hover:bg-[#084d9e] transition"
+            >
+              <i class="fab fa-linkedin text-sm"></i> LinkedIn
+            </a>
+
+            <a
+              href="mailto:ekewubas@gmail.com"
+              class="border border-accent text-accent px-6 py-3 rounded-xl font-semibold flex items-center gap-2 hover:bg-accent hover:text-black transition"
+            >
+              <i class="fas fa-envelope text-sm"></i> Email Me
+            </a>
+          </div>
         </div>
-      </div>
 
-      <div class="flex justify-center">
-        <img
-          src="./assets/Profile-picture.jpeg"
-          alt="Portrait of Saviour Ekewuba"
-          class="w-80 h-70 md:w-80 md:h-70 object-cover rounded-3xl border-4 border-accent shadow-2xl"
-        />
-      </div>
-    </section>
+        <div class="flex justify-center fade-up delay-2">
+          <div class="relative">
+            <div
+              class="absolute -inset-1 rounded-3xl bg-gradient-to-br from-accent/40 to-transparent blur-xl"
+            ></div>
+            <img
+              src="./assets/Profile-picture.jpeg"
+              alt="Portrait of Saviour Ekewuba"
+              onerror="this.style.display = 'none'"
+              class="relative w-80 h-80 object-cover rounded-3xl border-2 border-accent/40 shadow-2xl"
+            />
+          </div>
+        </div>
+      </section>
+    </header>
 
-    <!-- What I Build -->
-    <section class="py-12 border-t border-b border-zinc-900 bg-zinc-950">
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="py-16 border-t border-zinc-900">
       <div class="max-w-6xl mx-auto px-6">
         <div class="max-w-3xl">
           <h3 class="text-3xl font-bold mb-6">What I Build</h3>
           <p class="text-zinc-400 text-lg leading-8">
-            I focus on building products that are not just visually clean, but
-            also functional and useful. I enjoy translating business needs into
-            working digital systems.
+            I focus on products that are not just visually clean, but functional
+            and useful. I enjoy translating business needs into working digital
+            systems — from booking platforms and service websites to form
+            workflows and API integrations.
           </p>
         </div>
 
         <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-5 mt-10">
-          <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl">
+          <div
+            class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-accent/40 transition"
+          >
             <div class="text-accent text-2xl mb-4">
               <i class="fas fa-layer-group"></i>
             </div>
             <h4 class="font-semibold text-lg mb-2">Full-Stack Applications</h4>
             <p class="text-zinc-400 text-sm leading-7">
-              Web apps built with responsive frontend interfaces and reliable
-              backend functionality.
+              Responsive frontends connected to reliable backend functionality.
             </p>
           </div>
-
-          <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl">
+          <div
+            class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-accent/40 transition"
+          >
             <div class="text-accent text-2xl mb-4">
               <i class="fas fa-calendar-check"></i>
             </div>
             <h4 class="font-semibold text-lg mb-2">Booking & Form Systems</h4>
             <p class="text-zinc-400 text-sm leading-7">
-              User flows that collect data, validate inputs, calculate values,
-              and trigger actions.
+              User flows that collect data, validate inputs, and trigger
+              actions.
             </p>
           </div>
-
-          <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl">
+          <div
+            class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-accent/40 transition"
+          >
             <div class="text-accent text-2xl mb-4">
               <i class="fas fa-building"></i>
             </div>
             <h4 class="font-semibold text-lg mb-2">Business Websites</h4>
             <p class="text-zinc-400 text-sm leading-7">
               Modern websites for brands and service businesses with clear
-              messaging and clean layout.
+              messaging.
             </p>
           </div>
-
-          <div class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl">
+          <div
+            class="bg-zinc-900 border border-zinc-800 p-6 rounded-2xl hover:border-accent/40 transition"
+          >
             <div class="text-accent text-2xl mb-4">
               <i class="fas fa-paper-plane"></i>
             </div>
             <h4 class="font-semibold text-lg mb-2">Email & API Integrations</h4>
             <p class="text-zinc-400 text-sm leading-7">
-              Backend workflows that connect forms, email systems, and
-              application logic.
+              Backend workflows connecting forms, email systems, and app logic.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="bg-zinc-900 py-16">
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="bg-zinc-900 py-16 border-t border-zinc-800">
       <div class="max-w-6xl mx-auto px-6">
-        <h3 class="text-3xl font-bold text-center mb-4">Core Stack</h3>
-        <p class="text-zinc-400 text-center max-w-2xl mx-auto mb-10">
-          I use these tools to build responsive user interfaces, backend
-          functionality, and practical full-stack web experiences.
+        <h3 class="text-3xl font-bold text-center mb-3">Core Stack</h3>
+        <p class="text-zinc-400 text-center max-w-xl mx-auto mb-10">
+          Tools I use to build responsive interfaces, backend logic, and
+          full-stack web experiences.
         </p>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div class="bg-zinc-800 p-6 rounded-2xl text-center">HTML</div>
-          <div class="bg-zinc-800 p-6 rounded-2xl text-center">CSS</div>
-          <div class="bg-zinc-800 p-6 rounded-2xl text-center">
-            Tailwind CSS
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div class="bg-zinc-800/60 border border-zinc-700 p-6 rounded-2xl">
+            <p
+              class="text-accent text-xs font-semibold uppercase tracking-widest mb-4 flex items-center gap-2"
+            >
+              <i class="fas fa-desktop"></i> Frontend
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="skill-badge bg-zinc-700 text-zinc-200 px-3 py-1.5 text-sm rounded-lg cursor-default"
+                >HTML5</span
+              >
+              <span
+                class="skill-badge bg-zinc-700 text-zinc-200 px-3 py-1.5 text-sm rounded-lg cursor-default"
+                >CSS3</span
+              >
+              <span
+                class="skill-badge bg-zinc-700 text-zinc-200 px-3 py-1.5 text-sm rounded-lg cursor-default"
+                >JavaScript (ES6+)</span
+              >
+              <span
+                class="skill-badge bg-zinc-700 text-zinc-200 px-3 py-1.5 text-sm rounded-lg cursor-default"
+                >React.js</span
+              >
+              <span
+                class="skill-badge bg-zinc-700 text-zinc-200 px-3 py-1.5 text-sm rounded-lg cursor-default"
+                >Tailwind CSS</span
+              >
+              <span
+                class="skill-badge bg-zinc-700 text-zinc-200 px-3 py-1.5 text-sm rounded-lg cursor-default"
+                >Responsive Design</span
+              >
+            </div>
           </div>
-          <div class="bg-zinc-800 p-6 rounded-2xl text-center">JavaScript</div>
-          <div class="bg-zinc-800 p-6 rounded-2xl text-center">React</div>
-          <div class="bg-zinc-800 p-6 rounded-2xl text-center">Node.js</div>
-          <div class="bg-zinc-800 p-6 rounded-2xl text-center">Express.js</div>
-          <div class="bg-zinc-800 p-6 rounded-2xl text-center">MongoDB</div>
+
+          <div class="bg-zinc-800/60 border border-zinc-700 p-6 rounded-2xl">
+            <p
+              class="text-accent text-xs font-semibold uppercase tracking-widest mb-4 flex items-center gap-2"
+            >
+              <i class="fas fa-server"></i> Backend
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="skill-badge bg-zinc-700 text-zinc-200 px-3 py-1.5 text-sm rounded-lg cursor-default"
+                >Node.js</span
+              >
+              <span
+                class="skill-badge bg-zinc-700 text-zinc-200 px-3 py-1.5 text-sm rounded-lg cursor-default"
+                >Express.js</span
+              >
+              <span
+                class="skill-badge bg-zinc-700 text-zinc-200 px-3 py-1.5 text-sm rounded-lg cursor-default"
+                >REST API</span
+              >
+              <span
+                class="skill-badge bg-zinc-700 text-zinc-200 px-3 py-1.5 text-sm rounded-lg cursor-default"
+                >Nodemailer</span
+              >
+              <span
+                class="skill-badge bg-zinc-700 text-zinc-200 px-3 py-1.5 text-sm rounded-lg cursor-default"
+                >EmailJS</span
+              >
+            </div>
+          </div>
+
+          <div class="bg-zinc-800/60 border border-zinc-700 p-6 rounded-2xl">
+            <p
+              class="text-accent text-xs font-semibold uppercase tracking-widest mb-4 flex items-center gap-2"
+            >
+              <i class="fas fa-database"></i> Database
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="skill-badge bg-zinc-700 text-zinc-200 px-3 py-1.5 text-sm rounded-lg cursor-default"
+                >MongoDB</span
+              >
+            </div>
+          </div>
+
+          <div class="bg-zinc-800/60 border border-zinc-700 p-6 rounded-2xl">
+            <p
+              class="text-accent text-xs font-semibold uppercase tracking-widest mb-4 flex items-center gap-2"
+            >
+              <i class="fas fa-tools"></i> Tools
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="skill-badge bg-zinc-700 text-zinc-200 px-3 py-1.5 text-sm rounded-lg cursor-default"
+                >Git</span
+              >
+              <span
+                class="skill-badge bg-zinc-700 text-zinc-200 px-3 py-1.5 text-sm rounded-lg cursor-default"
+                >GitHub</span
+              >
+              <span
+                class="skill-badge bg-zinc-700 text-zinc-200 px-3 py-1.5 text-sm rounded-lg cursor-default"
+                >VS Code</span
+              >
+              <span
+                class="skill-badge bg-zinc-700 text-zinc-200 px-3 py-1.5 text-sm rounded-lg cursor-default"
+                >Vite</span
+              >
+              <span
+                class="skill-badge bg-zinc-700 text-zinc-200 px-3 py-1.5 text-sm rounded-lg cursor-default"
+                >Vercel</span
+              >
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects -->
+    <!-- ===== PROJECTS ===== -->
     <section id="projects" class="max-w-6xl mx-auto px-6 py-20">
       <div class="max-w-3xl mb-12">
         <h3 class="text-3xl font-bold">Selected Projects</h3>
@@ -246,70 +454,68 @@
           class="project-card bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800"
         >
           <div
-            class="h-64 bg-zinc-800 flex items-center justify-center text-6xl"
+            class="h-56 bg-gradient-to-br from-emerald-950 via-zinc-900 to-zinc-800 flex items-center justify-center"
           >
-            🏨
+            <div class="text-center">
+              <div class="text-5xl mb-3">🏨</div>
+              <p
+                class="text-accent text-xs font-semibold uppercase tracking-widest"
+              >
+                Hotel Booking Platform
+              </p>
+            </div>
           </div>
-
           <div class="p-8 flex flex-col flex-1">
-            <p class="text-accent text-sm font-semibold mb-3">
+            <p
+              class="text-accent text-xs font-semibold uppercase tracking-widest mb-3"
+            >
               Featured Project
             </p>
-
-            <h4 class="text-2xl font-semibold">
-              Bizmal Hotel Booking Platform
-            </h4>
-
+            <h4 class="text-2xl font-bold">Bizmal Hotel Booking</h4>
             <p class="text-zinc-400 mt-3 leading-7">
-              Built a full-stack hotel booking platform with room detail pages,
-              booking workflow, dynamic stay-cost calculation, and backend email
-              booking functionality.
+              Full-stack hotel booking platform with room detail pages, dynamic
+              stay-cost calculation, and automated email booking confirmation.
             </p>
-
-            <p class="text-zinc-500 mt-4 text-sm leading-7">
-              This project demonstrates my ability to build responsive frontend
-              interfaces and connect them to backend application logic using
-              React, Tailwind CSS, Express, and Nodemailer.
+            <p class="text-zinc-500 mt-3 text-sm leading-7">
+              Built with React, Tailwind CSS, Express, and Nodemailer —
+              demonstrates full frontend-to-backend integration.
             </p>
-
-            <div class="flex flex-wrap gap-2 mt-8">
+            <div class="flex flex-wrap gap-2 mt-6">
               <span
-                class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
+                class="bg-emerald-900/60 text-emerald-300 border border-emerald-800 px-3 py-1 text-xs rounded-full"
                 >React</span
               >
               <span
-                class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
+                class="bg-emerald-900/60 text-emerald-300 border border-emerald-800 px-3 py-1 text-xs rounded-full"
                 >Tailwind CSS</span
               >
               <span
-                class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
+                class="bg-emerald-900/60 text-emerald-300 border border-emerald-800 px-3 py-1 text-xs rounded-full"
                 >Node.js</span
               >
               <span
-                class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
+                class="bg-emerald-900/60 text-emerald-300 border border-emerald-800 px-3 py-1 text-xs rounded-full"
                 >Express</span
               >
               <span
-                class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
+                class="bg-emerald-900/60 text-emerald-300 border border-emerald-800 px-3 py-1 text-xs rounded-full"
                 >Nodemailer</span
               >
             </div>
-
             <div class="grid sm:grid-cols-2 gap-3 mt-8">
               <a
                 href="https://bizmal-hotel.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-center bg-accent text-black py-3 rounded-2xl font-medium hover:bg-emerald-300"
+                class="text-center bg-accent text-black py-3 rounded-2xl font-semibold hover:bg-emerald-300 transition"
               >
-                View Live Project
+                View Live
               </a>
-
               <a
                 href="https://github.com/saviola112/Bizmal-hotel.git"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-center border border-zinc-700 text-white py-3 rounded-2xl font-medium hover:border-accent hover:text-accent"
+                class="text-center border border-zinc-700 text-white py-3 rounded-2xl font-semibold hover:border-accent hover:text-accent transition"
               >
                 View Code
               </a>
@@ -322,55 +528,55 @@
           class="project-card bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800"
         >
           <div
-            class="h-64 bg-zinc-800 flex items-center justify-center text-6xl"
+            class="h-56 bg-gradient-to-br from-blue-950 via-zinc-900 to-zinc-800 flex items-center justify-center"
           >
-            🎯
+            <div class="text-center">
+              <div class="text-5xl mb-3">🎯</div>
+              <p
+                class="text-accent text-xs font-semibold uppercase tracking-widest"
+              >
+                Productivity App
+              </p>
+            </div>
           </div>
-
           <div class="p-8 flex flex-col flex-1">
-            <h4 class="text-2xl font-semibold">Goal Progress Tracker</h4>
-
+            <h4 class="text-2xl font-bold">Goal Progress Tracker</h4>
             <p class="text-zinc-400 mt-3 leading-7">
-              Built a web app for setting, tracking, and visualizing personal
-              goals with progress indicators, milestones, and daily updates.
+              Web app for setting, tracking, and visualizing personal goals with
+              progress indicators, milestones, and daily updates.
             </p>
-
-            <p class="text-zinc-500 mt-4 text-sm leading-7">
-              This project shows my frontend problem-solving ability with
-              component-based thinking, state handling, and clean user
-              interaction.
+            <p class="text-zinc-500 mt-3 text-sm leading-7">
+              Demonstrates component-based thinking, state management, and clean
+              user interaction in React.
             </p>
-
-            <div class="flex flex-wrap gap-2 mt-8">
+            <div class="flex flex-wrap gap-2 mt-6">
               <span
-                class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
+                class="bg-emerald-900/60 text-emerald-300 border border-emerald-800 px-3 py-1 text-xs rounded-full"
                 >React</span
               >
               <span
-                class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
+                class="bg-emerald-900/60 text-emerald-300 border border-emerald-800 px-3 py-1 text-xs rounded-full"
                 >Vite</span
               >
               <span
-                class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
+                class="bg-emerald-900/60 text-emerald-300 border border-emerald-800 px-3 py-1 text-xs rounded-full"
                 >JavaScript</span
               >
             </div>
-
             <div class="grid sm:grid-cols-2 gap-3 mt-8">
               <a
                 href="https://goal-front-s1wj.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-center bg-accent text-black py-3 rounded-2xl font-medium hover:bg-emerald-300"
+                class="text-center bg-accent text-black py-3 rounded-2xl font-semibold hover:bg-emerald-300 transition"
               >
-                View Live Project
+                View Live
               </a>
-
               <a
                 href="https://github.com/saviola112/Goal-front.git"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-center border border-zinc-700 text-white py-3 rounded-2xl font-medium hover:border-accent hover:text-accent"
+                class="text-center border border-zinc-700 text-white py-3 rounded-2xl font-semibold hover:border-accent hover:text-accent transition"
               >
                 View Code
               </a>
@@ -383,55 +589,55 @@
           class="project-card bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800"
         >
           <div
-            class="h-64 bg-zinc-800 flex items-center justify-center text-6xl"
+            class="h-56 bg-gradient-to-br from-purple-950 via-zinc-900 to-zinc-800 flex items-center justify-center"
           >
-            ✉️
+            <div class="text-center">
+              <div class="text-5xl mb-3">✉️</div>
+              <p
+                class="text-accent text-xs font-semibold uppercase tracking-widest"
+              >
+                Form Integration
+              </p>
+            </div>
           </div>
-
           <div class="p-8 flex flex-col flex-1">
-            <h4 class="text-2xl font-semibold">Professional Contact Form</h4>
-
+            <h4 class="text-2xl font-bold">Professional Contact Form</h4>
             <p class="text-zinc-400 mt-3 leading-7">
-              Built a contact form with input validation, multiple query
-              options, consent checkbox, and real email submission workflow.
+              Contact form with input validation, multiple query options,
+              consent checkbox, and real email submission workflow.
             </p>
-
-            <p class="text-zinc-500 mt-4 text-sm leading-7">
-              This project reflects my understanding of form handling, user
-              feedback, and integrating frontend actions with communication
-              tools.
+            <p class="text-zinc-500 mt-3 text-sm leading-7">
+              Reflects my understanding of form handling, user feedback, and
+              frontend-to-email integration.
             </p>
-
-            <div class="flex flex-wrap gap-2 mt-8">
+            <div class="flex flex-wrap gap-2 mt-6">
               <span
-                class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
+                class="bg-emerald-900/60 text-emerald-300 border border-emerald-800 px-3 py-1 text-xs rounded-full"
                 >HTML</span
               >
               <span
-                class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
+                class="bg-emerald-900/60 text-emerald-300 border border-emerald-800 px-3 py-1 text-xs rounded-full"
                 >JavaScript</span
               >
               <span
-                class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
+                class="bg-emerald-900/60 text-emerald-300 border border-emerald-800 px-3 py-1 text-xs rounded-full"
                 >EmailJS</span
               >
             </div>
-
             <div class="grid sm:grid-cols-2 gap-3 mt-8">
               <a
                 href="https://contact-form-five-livid.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-center bg-accent text-black py-3 rounded-2xl font-medium hover:bg-emerald-300"
+                class="text-center bg-accent text-black py-3 rounded-2xl font-semibold hover:bg-emerald-300 transition"
               >
-                View Live Project
+                View Live
               </a>
-
               <a
                 href="https://github.com/saviola112/contact-form.git"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-center border border-zinc-700 text-white py-3 rounded-2xl font-medium hover:border-accent hover:text-accent"
+                class="text-center border border-zinc-700 text-white py-3 rounded-2xl font-semibold hover:border-accent hover:text-accent transition"
               >
                 View Code
               </a>
@@ -444,56 +650,55 @@
           class="project-card bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800"
         >
           <div
-            class="h-64 bg-zinc-800 flex items-center justify-center text-6xl"
+            class="h-56 bg-gradient-to-br from-sky-950 via-zinc-900 to-zinc-800 flex items-center justify-center"
           >
-            🧼
+            <div class="text-center">
+              <div class="text-5xl mb-3">🧼</div>
+              <p
+                class="text-accent text-xs font-semibold uppercase tracking-widest"
+              >
+                Business Website
+              </p>
+            </div>
           </div>
-
           <div class="p-8 flex flex-col flex-1">
-            <h4 class="text-2xl font-semibold">Espree Cleaning Services</h4>
-
+            <h4 class="text-2xl font-bold">Espree Cleaning Services</h4>
             <p class="text-zinc-400 mt-3 leading-7">
-              Built a service business website for residential and commercial
-              cleaning with a modern layout, responsive design, and clear user
-              journey.
+              Service business website for residential and commercial cleaning
+              with a modern layout, responsive design, and clear user journey.
             </p>
-
-            <p class="text-zinc-500 mt-4 text-sm leading-7">
-              This project demonstrates my ability to build polished websites
-              for real businesses with strong structure, clarity, and brand
-              presentation.
+            <p class="text-zinc-500 mt-3 text-sm leading-7">
+              Demonstrates ability to build polished client-facing sites with
+              strong structure and brand presentation.
             </p>
-
-            <div class="flex flex-wrap gap-2 mt-8">
+            <div class="flex flex-wrap gap-2 mt-6">
               <span
-                class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
+                class="bg-emerald-900/60 text-emerald-300 border border-emerald-800 px-3 py-1 text-xs rounded-full"
                 >HTML</span
               >
               <span
-                class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
+                class="bg-emerald-900/60 text-emerald-300 border border-emerald-800 px-3 py-1 text-xs rounded-full"
                 >Tailwind CSS</span
               >
               <span
-                class="bg-emerald-900 text-emerald-300 px-3 py-1 text-xs rounded-full"
+                class="bg-emerald-900/60 text-emerald-300 border border-emerald-800 px-3 py-1 text-xs rounded-full"
                 >JavaScript</span
               >
             </div>
-
             <div class="grid sm:grid-cols-2 gap-3 mt-8">
               <a
                 href="https://espreecleaning.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-center bg-accent text-black py-3 rounded-2xl font-medium hover:bg-emerald-300"
+                class="text-center bg-accent text-black py-3 rounded-2xl font-semibold hover:bg-emerald-300 transition"
               >
-                View Live Project
+                View Live
               </a>
-
               <a
                 href="https://github.com/saviola112/Espree.git"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-center border border-zinc-700 text-white py-3 rounded-2xl font-medium hover:border-accent hover:text-accent"
+                class="text-center border border-zinc-700 text-white py-3 rounded-2xl font-semibold hover:border-accent hover:text-accent transition"
               >
                 View Code
               </a>
@@ -503,34 +708,72 @@
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="py-8">
+    <!-- ===== EDUCATION ===== -->
+    <section id="education" class="bg-zinc-900 border-t border-zinc-800 py-16">
+      <div class="max-w-6xl mx-auto px-6">
+        <h3 class="text-3xl font-bold mb-10">Education & Training</h3>
+        <div class="grid md:grid-cols-2 gap-6 max-w-3xl">
+          <div
+            class="bg-zinc-800/60 border border-zinc-700 rounded-2xl p-6 hover:border-accent/40 transition"
+          >
+            <p
+              class="text-accent text-xs font-semibold uppercase tracking-widest mb-1"
+            >
+              2025 – Present
+            </p>
+            <h4 class="text-lg font-bold mt-2">Full-Stack Web Development</h4>
+            <p class="text-zinc-400 text-sm mt-1">
+              TechStudio Academy · Lagos, Nigeria
+            </p>
+          </div>
+          <div
+            class="bg-zinc-800/60 border border-zinc-700 rounded-2xl p-6 hover:border-accent/40 transition"
+          >
+            <p
+              class="text-accent text-xs font-semibold uppercase tracking-widest mb-1"
+            >
+              July 2025 – Jan 2026
+            </p>
+            <h4 class="text-lg font-bold mt-2">Frontend Web Development</h4>
+            <p class="text-zinc-400 text-sm mt-1">ALX Nigeria · Online</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="py-16">
       <div class="max-w-5xl mx-auto px-6">
         <div
-          class="bg-gradient-to-r from-zinc-900 to-zinc-800 border border-zinc-800 rounded-3xl p-8 md:p-10 text-center"
+          class="bg-gradient-to-br from-zinc-900 via-zinc-900 to-emerald-950/40 border border-zinc-800 rounded-3xl p-10 md:p-14 text-center"
         >
-          <h3 class="text-3xl font-bold">
+          <h3 class="text-3xl md:text-4xl font-bold">
             Open to internship and junior developer opportunities
           </h3>
           <p class="text-zinc-400 max-w-2xl mx-auto mt-4 text-lg leading-8">
-            I’m currently looking for opportunities where I can contribute to
-            real products, learn from experienced developers, and keep growing
-            as a full-stack engineer.
+            I'm looking for opportunities to contribute to real products, learn
+            from experienced developers, and grow as a full-stack engineer.
+            Available for onsite roles in Lagos and remote.
           </p>
-
           <div class="flex flex-wrap justify-center gap-4 mt-8">
             <a
               href="mailto:ekewubas@gmail.com"
-              class="bg-accent text-black px-6 py-3 rounded-xl font-medium hover:bg-emerald-300"
+              class="bg-accent text-black px-8 py-3 rounded-xl font-semibold hover:bg-emerald-300 transition"
             >
-              Let’s Talk
+              Let's Talk
             </a>
-
+            <a
+              href="./assets/Saviour-Ekewuba-Resume.pdf"
+              download
+              class="bg-zinc-800 text-white px-8 py-3 rounded-xl font-semibold hover:bg-zinc-700 border border-zinc-700 transition"
+            >
+              <i class="fas fa-download mr-2 text-sm"></i>Download CV
+            </a>
             <a
               href="https://www.linkedin.com/in/saviour-ekewuba"
               target="_blank"
               rel="noopener noreferrer"
-              class="border border-accent text-accent px-6 py-3 rounded-xl font-medium hover:bg-accent hover:text-black"
+              class="border border-accent text-accent px-8 py-3 rounded-xl font-semibold hover:bg-accent hover:text-black transition"
             >
               Connect on LinkedIn
             </a>
@@ -539,49 +782,82 @@
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="bg-zinc-900 py-20 mt-16">
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="bg-zinc-900 border-t border-zinc-800 py-20">
       <div class="max-w-6xl mx-auto px-6 text-center">
-        <h3 class="text-3xl font-bold mb-4">Let’s Connect</h3>
-
+        <h3 class="text-3xl font-bold mb-4">Let's Connect</h3>
         <p class="text-zinc-400 max-w-xl mx-auto text-lg leading-8">
-          If you’re looking for a developer who can build responsive websites,
+          If you're looking for a developer who can build responsive websites,
           integrate backend workflows, and contribute to practical digital
-          products, I’d be glad to connect.
+          products — I'd be glad to connect.
         </p>
 
-        <div class="flex justify-center gap-8 mt-12 text-4xl">
+        <div class="flex justify-center gap-8 mt-12 text-3xl">
           <a
             href="https://github.com/saviola112"
             target="_blank"
             rel="noopener noreferrer"
-            class="hover:text-accent"
+            class="hover:text-accent transition"
+            title="GitHub"
           >
             <i class="fab fa-github"></i>
           </a>
-
           <a
             href="https://www.linkedin.com/in/saviour-ekewuba"
             target="_blank"
             rel="noopener noreferrer"
-            class="hover:text-accent"
+            class="hover:text-accent transition"
+            title="LinkedIn"
           >
             <i class="fab fa-linkedin"></i>
           </a>
-
-          <a href="mailto:ekewubas@gmail.com" class="hover:text-accent">
+          <a
+            href="mailto:ekewubas@gmail.com"
+            class="hover:text-accent transition"
+            title="Email"
+          >
             <i class="fas fa-envelope"></i>
+          </a>
+          <a
+            href="tel:+2347067886494"
+            class="hover:text-accent transition"
+            title="Phone"
+          >
+            <i class="fas fa-phone"></i>
           </a>
         </div>
 
-        <p class="text-zinc-400 max-w-md mx-auto mt-6">
-          Let’s build something useful, modern, and impactful.
+        <p class="text-zinc-500 text-sm mt-6">
+          ekewubas@gmail.com · Lagos, Nigeria
         </p>
-
-        <p class="mt-16 text-zinc-500">
-          © 2026 Saviour Chibuzor Ekewuba • Lagos, Nigeria
+        <p class="mt-16 text-zinc-600 text-sm">
+          © 2026 Saviour Chibuzor Ekewuba
         </p>
       </div>
     </section>
+
+    <!-- ===== NAVBAR ACTIVE STATE SCRIPT ===== -->
+    <script>
+      const sections = document.querySelectorAll("section[id], header");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === "#" + entry.target.id) {
+                  link.classList.add("active");
+                }
+              });
+            }
+          });
+        },
+        { threshold: 0.4 },
+      );
+
+      sections.forEach((section) => observer.observe(section));
+    </script>
   </body>
 </html>
